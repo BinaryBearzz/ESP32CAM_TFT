@@ -22,13 +22,6 @@ bool readyToSNAP = true;
 unsigned long previousTime = 0;
 int interval = 10000; //set interval (10000millis)10sec
 
-void initTJpDec() // for convert buffer camera display to TFT screen
-{
-  TJpgDec.setJpgScale(2);
-  TJpgDec.setSwapBytes(true);
-  TJpgDec.setCallback(tft_output);
-}
-
 bool tft_output(int16_t x, int16_t y, uint16_t w, uint16_t h, uint16_t *bitmap)
 {
   tft.setRotation(1);
@@ -36,6 +29,13 @@ bool tft_output(int16_t x, int16_t y, uint16_t w, uint16_t h, uint16_t *bitmap)
     return 0;
   tft.pushImage(x, y, w, h, bitmap);
   return 1;
+}
+
+void initTJpDec() // for convert buffer camera display to TFT screen
+{
+  TJpgDec.setJpgScale(2);
+  TJpgDec.setSwapBytes(true);
+  TJpgDec.setCallback(tft_output);
 }
 
 void statusCameraIsReady()

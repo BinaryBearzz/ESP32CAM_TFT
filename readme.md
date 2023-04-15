@@ -10,3 +10,4 @@
 
 ![Pinout](https://github.com/BinaryBearzz/ESP32CAM_TFT/blob/main/Images/esp32-cam-connectTFT.png?=250x250)
 
+source video working : https://www.tiktok.com/@littlenoomz/video/7210350663371328773?lang=en
